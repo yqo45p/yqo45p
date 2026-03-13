@@ -1,205 +1,363 @@
 <!DOCTYPE html>
 <html lang="zh-HK">
+
 <head>
+
 <meta charset="UTF-8">
 <title>曾珮甄作品集</title>
 
-<!-- Google Fonts Dela Gothic One -->
 <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin:0;
-    font-family: 'Dela Gothic One', sans-serif;
-    scroll-behavior: smooth;
-    background:#161917;
-    color:#FFFFFF;
+
+body{
+margin:0;
+font-family:'Dela Gothic One',sans-serif;
+background:#AF4B42;
+color:#D9A441;
+scroll-behavior:smooth;
 }
 
-nav {
-    position: fixed; top:0; width:100%;
-    background: rgba(180,212,109,0.9);
-    display:flex; justify-content:center; padding:15px 0; z-index:10;
-}
-nav a {
-    color:#b4d46d;
-    margin:0 25px;
-    text-decoration:none;
-    font-weight:bold;
-    letter-spacing:1px;
-    padding:4px 8px;
-    border-radius:8px;
-    transition: 0.2s;
-}
-/* 點擊/聚焦圈圈效果只留 nav，email 不用 */
-nav a:focus, nav a:active {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(180, 212, 109, 0.7);
-    background: rgba(180,212,109,0.1);
+h1,h2,h3{
+color:#D9A441;
 }
 
-#hero h1, section h2, section h3 {
-    font-family: 'Dela Gothic One', sans-serif;
-    color:#b4d46d;
-    letter-spacing:1px;
-    margin-bottom:25px;
+section{
+padding:120px 20px;
+text-align:center;
 }
 
-section {
-    min-height:100vh; padding:120px 20px 60px;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    opacity:0; transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#AF4B42;
+padding:20px;
+text-align:center;
+z-index:10;
 }
-section.visible { opacity:1; transform: translateY(0); }
 
-#hero { text-align:center; position:relative; overflow:hidden; }
-#hero h1 { font-size:70px; margin-bottom:15px; }
-#hero p { font-size:28px; color:#FFFFFF; }
+nav a{
+margin:0 20px;
+text-decoration:none;
+color:#D9A441;
+font-size:18px;
+}
 
-.projects {
-    display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr));
-    gap:25px; margin-top:25px; width:90%; max-width:1000px;
-}
-.project {
-    border:1px solid #b4d46d; border-radius:10px; overflow:hidden;
-    background:#222; cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;
-}
-.project img {
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    display:block;
-}
-.project:hover { transform:scale(1.05); box-shadow:0 8px 25px rgba(0,0,0,0.5); }
+/* hero */
 
-.filter-buttons { margin-bottom:20px; }
-.filter-buttons button {
-    padding:8px 18px; margin:0 10px;
-    border:none; border-radius:5px; cursor:pointer;
-    background:#b4d46d; color:#161917; font-weight:bold;
-    transition:0.3s;
+#hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 }
-.filter-buttons button:hover { background:#95b34f; }
-.filter-buttons button.active { background:#333; color:#b4d46d; }
 
-#lightbox {
-    position:fixed; top:0; left:0; width:100%; height:100%;
-    background:rgba(0,0,0,0.95); display:none; justify-content:center; align-items:center; z-index:100;
+#hero h1{
+font-size:60px;
+margin-bottom:10px;
 }
-#lightbox img, #lightbox iframe {
-    max-width:90%; max-height:90%; border-radius:8px;
-}
-#lightbox span { position:absolute; top:30px; right:30px; font-size:40px; color:#fff; cursor:pointer; }
 
-/* Email 文字不出圈，只改顏色 */
-a[href^="mailto:"] {
-    color: #FFFFFF;
-    text-decoration: none;
+/* masonry layout */
+
+.projects{
+column-count:3;
+column-gap:20px;
+max-width:1100px;
+margin:40px auto;
 }
-a[href^="mailto:"]:hover {
-    text-decoration: underline;
+
+@media (max-width:800px){
+.projects{
+column-count:2;
 }
+}
+
+.project{
+break-inside:avoid;
+margin-bottom:20px;
+border:2px solid #D9A441;
+border-radius:6px;
+overflow:hidden;
+cursor:pointer;
+position:relative;
+transition:0.3s;
+transform-style:preserve-3d;
+}
+
+.project:hover{
+transform:scale(1.03);
+}
+
+.project img{
+width:100%;
+height:auto;
+display:block;
+}
+
+/* hover title */
+
+.project-title{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+background:rgba(0,0,0,0.6);
+padding:10px;
+opacity:0;
+transition:0.3s;
+}
+
+.project:hover .project-title{
+opacity:1;
+}
+
+/* project panel */
+
+#project-panel{
+position:fixed;
+top:0;
+right:-100%;
+width:50%;
+height:100%;
+background:#AF4B42;
+color:#D9A441;
+padding:40px;
+box-sizing:border-box;
+transition:0.5s;
+overflow:auto;
+z-index:999;
+}
+
+#panel-img{
+width:100%;
+margin-bottom:20px;
+}
+
+#panel-close{
+position:absolute;
+top:20px;
+right:30px;
+font-size:30px;
+cursor:pointer;
+}
+
+/* mouse background */
+
+#mouse-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+background:radial-gradient(circle 120px at 50% 50%,rgba(217,164,65,0.25),transparent 80%);
+z-index:0;
+}
+
+body *{
+position:relative;
+z-index:1;
+}
+
 </style>
+
 </head>
 
 <body>
 
+<div id="mouse-bg"></div>
+
 <nav>
-  <a href="#about">About</a>
-  <a href="#work">Work</a>
-  <a href="#connect">Connect</a>
+<a href="#about">About</a>
+<a href="#work">Work</a>
+<a href="#connect">Connect</a>
 </nav>
 
+
 <section id="hero">
-  <h1>曾珮甄作品集</h1>
-  <p>Editing / Design / 3D Modeling</p>
+
+<h1>曾珮甄作品集</h1>
+
+<p>Design / Editing / 3D Modeling</p>
+
 </section>
+
 
 <section id="about">
-  <h2>About</h2>
-  <p>這裡可以寫你的自我介紹、專業能力或作品風格描述。</p>
+
+<h2>About</h2>
+
+<p>
+這裡可以寫你的自我介紹，例如設計理念、擅長的領域、或是你想做的方向。
+</p>
+
 </section>
+
 
 <section id="work">
-  <h2>Work</h2>
 
-  <div class="filter-buttons">
-    <button data-filter="editing">Editing</button>
-    <button data-filter="design" class="active">Design</button>
-    <button data-filter="modeling">3D Modeling</button>
-  </div>
+<h2>Work</h2>
 
-  <div class="projects">
-    <!-- Design 圖片 -->
-    <div class="project design"><img src="design/shift.jpg" alt="Shift"></div>
-    <div class="project design"><img src="design/filmfestival.png" alt="Film Festival"></div>
-    <div class="project design"><img src="design/communicationcamp.jpg" alt="Communication Camp"></div>
-    <div class="project design"><img src="design/voiceofzhongzheng.jpg" alt="Voice of Zhongzheng"></div>
+<h3>Design</h3>
 
-    <!-- 剪輯影片封面圖（點擊後播放） -->
-    <div class="project editing" data-video="https://www.youtube.com/embed/YSA-ws8PeJo"><img src="design/video1.jpg" alt="Video 1"></div>
-    <div class="project editing" data-video="https://www.youtube.com/embed/k5CRxQ0rPTc"><img src="design/video2.jpg" alt="Video 2"></div>
-    <div class="project editing" data-video="https://www.youtube.com/embed/DDLpt_OMKXY"><img src="design/video3.jpg" alt="Video 3"></div>
-    <div class="project editing" data-video="https://www.youtube.com/embed/_tzyIj1j39Q"><img src="design/video4.jpg" alt="Video 4"></div>
-    <div class="project editing" data-video="https://www.youtube.com/embed/D-h27S7wz5s"><img src="design/video5.jpg" alt="Video 5"></div>
-    <div class="project editing" data-video="https://www.youtube.com/embed/7ZRsVUVbRbg"><img src="design/video6.jpg" alt="Video 6"></div>
-  </div>
+<div class="projects">
+
+<div class="project"
+data-title="SHIFT"
+data-description="SHIFT 視覺設計專案，透過幾何構圖與色彩呈現動態轉變。">
+
+<img src="design/shift.jpg">
+
+<div class="project-title">
+SHIFT
+</div>
+
+</div>
+
+<div class="project"
+data-title="Film Festival"
+data-description="Film Festival 海報設計。">
+
+<img src="design/filmfestival.png">
+
+<div class="project-title">
+Film Festival
+</div>
+
+</div>
+
+<div class="project"
+data-title="Communication Camp"
+data-description="Communication Camp 視覺設計。">
+
+<img src="design/communicationcamp.jpg">
+
+<div class="project-title">
+Communication Camp
+</div>
+
+</div>
+
+<div class="project"
+data-title="Voice of Zhongzheng"
+data-description="Voice of Zhongzheng 視覺專案。">
+
+<img src="design/voiceofzhongzheng.jpg">
+
+<div class="project-title">
+Voice of Zhongzheng
+</div>
+
+</div>
+
+</div>
+
 </section>
+
 
 <section id="connect">
-  <h2>Connect</h2>
-  <p>Email: <a href="mailto:jane940410@gmail.com">jane940410@gmail.com</a></p>
+
+<h2>Connect</h2>
+
+<p>Email: jane940410@gmail.com</p>
+
 </section>
 
-<div id="lightbox"><span id="close">&times;</span></div>
+
+<div id="project-panel">
+
+<span id="panel-close">✕</span>
+
+<img id="panel-img">
+
+<h2 id="panel-title"></h2>
+
+<p id="panel-text"></p>
+
+</div>
+
 
 <script>
-// Lightbox 支援圖片與影片
-const projects = document.querySelectorAll('.project');
-const lightbox = document.getElementById('lightbox');
 
-projects.forEach(proj => {
-  proj.addEventListener('click', () => {
-    lightbox.innerHTML = '<span id="close">&times;</span>'; // 重置內容
-    lightbox.style.display = 'flex';
+/* mouse background */
 
-    if(proj.dataset.video){
-        const iframe = document.createElement('iframe');
-        iframe.src = proj.dataset.video;
-        iframe.allow = "fullscreen";
-        lightbox.appendChild(iframe);
-    } else {
-        const img = document.createElement('img');
-        img.src = proj.querySelector('img').src;
-        lightbox.appendChild(img);
-    }
+const bg = document.getElementById("mouse-bg");
 
-    const closeBtn = document.getElementById('close');
-    closeBtn.addEventListener('click', ()=>{ lightbox.style.display='none'; });
-  });
+document.addEventListener("mousemove",(e)=>{
+
+bg.style.background =
+`radial-gradient(circle 120px at ${e.clientX}px ${e.clientY}px,rgba(217,164,65,0.25),transparent 80%)`;
+
 });
 
-// 滑動淡入
-const sections = document.querySelectorAll('section');
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); } });
-}, { threshold:0.2 });
-sections.forEach(section => observer.observe(section));
 
-// 篩選功能
-const filterButtons = document.querySelectorAll('.filter-buttons button');
-const allProjects = document.querySelectorAll('.project');
-filterButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterButtons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.getAttribute('data-filter');
-    allProjects.forEach(p => {
-      p.style.display = p.classList.contains(filter) ? 'block':'none';
-    });
-  });
-});
+/* project panel */
+
+const projects = document.querySelectorAll(".project")
+
+const panel = document.getElementById("project-panel")
+const panelImg = document.getElementById("panel-img")
+const panelTitle = document.getElementById("panel-title")
+const panelText = document.getElementById("panel-text")
+
+projects.forEach(project=>{
+
+project.addEventListener("click",()=>{
+
+panel.style.right="0"
+
+panelImg.src=project.querySelector("img").src
+
+panelTitle.textContent=project.dataset.title
+
+panelText.textContent=project.dataset.description
+
+})
+
+})
+
+
+document.getElementById("panel-close").onclick=()=>{
+
+panel.style.right="-100%"
+
+}
+
+
+/* 3D hover */
+
+const cards=document.querySelectorAll(".project")
+
+cards.forEach(card=>{
+
+card.addEventListener("mousemove",(e)=>{
+
+const rect=card.getBoundingClientRect()
+
+const x=e.clientX-rect.left
+const y=e.clientY-rect.top
+
+const centerX=rect.width/2
+const centerY=rect.height/2
+
+const rotateX=(y-centerY)/10
+const rotateY=(centerX-x)/10
+
+card.style.transform=
+`rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`
+
+})
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.transform="rotateX(0) rotateY(0) scale(1)"
+
+})
+
+})
+
 </script>
 
 </body>
