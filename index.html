@@ -16,6 +16,16 @@ body{
 
 h1,h2,h3{
   color:#8C3A3A;
+  margin:0;
+}
+
+h1{ font-size:60px; }
+h2{ font-size:36px; }
+
+/* About 文字稍大 */
+#about p{
+  font-size:18px;
+  line-height:1.6;
 }
 
 section{
@@ -49,7 +59,6 @@ nav a{
 }
 
 #hero h1{
-  font-size:60px;
   margin-bottom:10px;
 }
 
@@ -81,7 +90,7 @@ nav a{
   column-gap:20px;
   max-width:1100px;
   margin:40px auto;
-  display:none;
+  display:block; /* 一開始全部顯示 */
 }
 
 @media (max-width:800px){
@@ -120,7 +129,7 @@ nav a{
   padding:10px;
   opacity:0;
   transition:0.3s;
-  color:#8C3A3A;
+  color:#FFFFFF; /* hover文字白色 */
 }
 
 .project:hover .project-title{
@@ -143,17 +152,19 @@ nav a{
 #project-panel{
   background:#FFFFFF;
   color:#8C3A3A;
-  padding:30px;
-  max-width:800px;
+  padding:20px;
+  max-width:700px;
   width:90%;
   max-height:90%;
   overflow:auto;
   position:relative;
   border-radius:6px;
+  text-align:center;
 }
 
 #panel-img, #panel-video{
   width:100%;
+  max-height:400px;
   margin-bottom:20px;
 }
 
@@ -185,15 +196,6 @@ nav a{
 <section id="hero">
 <h1>曾珮甄作品集</h1>
 <p>Design / Editing / 3D Modeling</p>
-</section>
-
-<section id="about">
-<h2>About</h2>
-<p>
-我是曾珮甄，目前就讀中正大學傳播系三年級，會剪輯、設計及3D建模。<br>
-我想做的，是把我會的技能融合起來，做出有意思、有力量的作品。<br>
-同時，我也保持學習新技術和挑戰不同媒介的熱情。
-</p>
 </section>
 
 <section id="work">
@@ -253,6 +255,16 @@ nav a{
 </div>
 </div>
 
+</section>
+
+<!-- About 移到 Work 後面 -->
+<section id="about">
+<h2>About</h2>
+<p>
+我是曾珮甄，目前就讀中正大學傳播系三年級，會剪輯、設計及3D建模。<br>
+我想做的，是把我會的技能融合起來，做出有意思、有力量的作品。<br>
+同時，我也保持學習新技術和挑戰不同媒介的熱情。
+</p>
 </section>
 
 <section id="connect">
@@ -315,8 +327,13 @@ const buttons = document.querySelectorAll('.category-btns button');
 buttons.forEach(btn=>{
   btn.addEventListener('click',()=>{
     const cat = btn.dataset.cat;
-    document.querySelectorAll('.projects').forEach(p=>p.style.display='none');
-    document.getElementById(cat).style.display='block';
+    document.querySelectorAll('.projects').forEach(p=>{
+      if(p.id===cat){
+        p.style.display='block';
+      } else {
+        p.style.display='none';
+      }
+    });
   })
 });
 </script>
