@@ -10,10 +10,10 @@
 <style>
 body {
     margin:0;
-    font-family: 'LXGW Marker Gothic', sans-serif;
+    font-family: 'LXGW Marker Gothic', sans-serif; /* 全站字體 */
     scroll-behavior: smooth;
     background:#D1CF75;
-    color:#5F4F3A;
+    color:#5F4F3A; /* 內文顏色 */
 }
 
 nav {
@@ -23,6 +23,14 @@ nav {
 }
 nav a { color:#fff; margin:0 25px; text-decoration:none; font-weight:bold; letter-spacing:1px; }
 nav a:hover { text-decoration:underline; }
+
+/* 標題和內文統一字體、顏色 */
+#hero h1, section h2, section h3 {
+    font-family: 'LXGW Marker Gothic', sans-serif;
+    color:#5F4F3A; /* 與內文相同 */
+    letter-spacing:1px;
+    margin-bottom:25px;
+}
 
 section {
     min-height:100vh; padding:120px 20px 60px;
@@ -36,12 +44,7 @@ section.visible { opacity:1; transform: translateY(0); }
     text-align:center; position:relative; overflow:hidden;
     background:url('hero.jpg') center/cover no-repeat;
 }
-#hero h1 {
-    font-size:70px; /* 標題縮小 */
-    margin-bottom:15px;
-    color:#8D995B;
-    text-shadow: none;
-}
+#hero h1 { font-size:70px; margin-bottom:15px; }
 #hero p { font-size:28px; color:#5F4F3A; }
 
 .projects {
@@ -54,8 +57,6 @@ section.visible { opacity:1; transform: translateY(0); }
 }
 .project img { width:100%; display:block; }
 .project:hover { transform:scale(1.05); box-shadow:0 8px 25px rgba(0,0,0,0.3); }
-
-section h2, section h3 { margin-bottom:25px; color:#8D995B; letter-spacing:1px; }
 
 .filter-buttons { margin-bottom:20px; }
 .filter-buttons button {
