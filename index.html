@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <title>曾珮甄作品集</title>
 
-<!-- Google Fonts Potta One -->
-<link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+<!-- Google Fonts LXGW Marker Gothic -->
+<link href="https://fonts.googleapis.com/css2?family=LXGW+Marker+Gothic&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin:0;
-    font-family: 'Potta One', sans-serif;
+    font-family: 'LXGW Marker Gothic', sans-serif;
     scroll-behavior: smooth;
     background:#D1CF75;
     color:#5F4F3A;
@@ -37,7 +37,7 @@ section.visible { opacity:1; transform: translateY(0); }
     background:url('hero.jpg') center/cover no-repeat;
 }
 #hero h1 {
-    font-size:100px;
+    font-size:70px; /* 標題縮小 */
     margin-bottom:15px;
     color:#8D995B;
     text-shadow: none;
@@ -108,18 +108,19 @@ a[href^="mailto:"]:hover { text-decoration: underline; }
   <h2>Work</h2>
 
   <div class="filter-buttons">
-    <button data-filter="editing" class="active">Editing</button>
-    <button data-filter="design">Design</button>
+    <button data-filter="editing">Editing</button>
+    <button data-filter="design" class="active">Design</button>
     <button data-filter="modeling">3D Modeling</button>
   </div>
 
   <div class="projects">
-    <div class="project editing"><img src="editing1.jpg" alt="Editing Project 1"></div>
-    <div class="project editing"><img src="editing2.jpg" alt="Editing Project 2"></div>
-    <div class="project design"><img src="design1.jpg" alt="Design Project 1"></div>
-    <div class="project design"><img src="design2.jpg" alt="Design Project 2"></div>
-    <div class="project modeling"><img src="model1.jpg" alt="3D Modeling Project 1"></div>
-    <div class="project modeling"><img src="model2.jpg" alt="3D Modeling Project 2"></div>
+    <!-- Design 分類圖片 -->
+    <div class="project design"><img src="images/design/shift.jpg" alt="Design Project: Shift"></div>
+    <div class="project design"><img src="images/design/filmfestival.jpg" alt="Design Project: Film Festival"></div>
+    <div class="project design"><img src="images/design/communicationcamp.jpg" alt="Design Project: Communication Camp"></div>
+    <div class="project design"><img src="images/design/voiceofzhongzheng.jpg" alt="Design Project: Voice of Zhongzheng"></div>
+
+    <!-- Editing 與 3D Modeling 可之後補上 -->
   </div>
 
   <div class="video-container">
@@ -135,7 +136,7 @@ a[href^="mailto:"]:hover { text-decoration: underline; }
 <div id="lightbox"><span id="close">&times;</span><img src="" alt=""></div>
 
 <script>
-// Lightbox
+// Lightbox 功能
 const projects = document.querySelectorAll('.project img');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = lightbox.querySelector('img');
