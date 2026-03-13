@@ -6,13 +6,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
 
 <style>
-/* 全局設定 */
 body{
 margin:0;
 font-family:'Dela Gothic One',sans-serif;
 background:#6DA3A9;
 color:#FFFFFF;
-overflow-x:hidden; /* 禁止左右滾動 */
+overflow-x:hidden;
 scroll-behavior:smooth;
 }
 
@@ -31,7 +30,7 @@ position:fixed;
 top:50%;
 right:0;
 transform:translateY(-50%);
-background:rgba(0,0,0,0.1);
+background:#6DA3A9; /* 統一背景色 */
 padding:20px;
 text-align:right;
 z-index:10;
@@ -87,7 +86,7 @@ column-count:3;
 column-gap:20px;
 max-width:1100px;
 margin:40px auto;
-display:none; /* 預設隱藏，點按分類才顯示 */
+display:none;
 }
 
 @media (max-width:800px){
@@ -164,23 +163,6 @@ font-size:30px;
 cursor:pointer;
 }
 
-/* mouse background */
-#mouse-bg{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-background:radial-gradient(circle 120px at 50% 50%,rgba(255,255,255,0.2),transparent 80%);
-z-index:0;
-}
-
-body *{
-position:relative;
-z-index:1;
-}
-
 /* Connect 最底部 */
 #connect{
 padding:60px 20px;
@@ -188,17 +170,14 @@ background:#5B8E8F;
 color:#FFFFFF;
 text-align:center;
 }
-
 </style>
 </head>
 
 <body>
 
-<div id="mouse-bg"></div>
-
 <nav>
-<a href="#about">About</a>
 <a href="#work">Work</a>
+<a href="#about">About</a>
 </nav>
 
 <section id="hero">
@@ -242,13 +221,17 @@ text-align:center;
 
 <!-- Editing -->
 <div class="projects" id="editing">
-<div class="project" data-title="Editing Work 1" data-description="剪輯作品。">
-<img src="editing/video1.jpg">
-<div class="project-title">Editing Work 1</div>
+<div class="project" data-title="Ravine" data-description="剪輯作品。影片：https://youtu.be/ANlh-9-dZR8?si=zwyEOQ5nlduVLKED">
+<img src="editing/ravine.png">
+<div class="project-title">Ravine</div>
 </div>
-<div class="project" data-title="Editing Work 2" data-description="剪輯作品。">
-<img src="editing/video2.jpg">
-<div class="project-title">Editing Work 2</div>
+<div class="project" data-title="Sony" data-description="剪輯作品。影片：https://youtu.be/YSA-ws8PeJo">
+<img src="editing/sony.png">
+<div class="project-title">Sony</div>
+</div>
+<div class="project" data-title="Wendan" data-description="剪輯作品。影片：https://www.peopo.org/video/822058/embed">
+<img src="editing/wendan.jpg">
+<div class="project-title">Wendan</div>
 </div>
 </div>
 
@@ -279,12 +262,6 @@ text-align:center;
 </div>
 
 <script>
-// mouse background
-const bg = document.getElementById("mouse-bg");
-document.addEventListener("mousemove",(e)=>{
-  bg.style.background = `radial-gradient(circle 120px at ${e.clientX}px ${e.clientY}px,rgba(255,255,255,0.2),transparent 80%)`;
-});
-
 // project panel
 const projects = document.querySelectorAll(".project")
 const panel = document.getElementById("project-panel")
