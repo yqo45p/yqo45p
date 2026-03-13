@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <title>曾珮甄作品集</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+<!-- Google Fonts Potta One -->
+<link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin:0;
-    font-family: 'Dela Gothic One', sans-serif;
+    font-family: 'Potta One', sans-serif;
     scroll-behavior: smooth;
     background:#D1CF75;
-    color:#5F4F3A;   /* 內文字色更新 */
+    color:#5F4F3A;
 }
 
 nav {
@@ -42,7 +42,7 @@ section.visible { opacity:1; transform: translateY(0); }
     color:#8D995B;
     text-shadow: none;
 }
-#hero p { font-size:28px; color:#5F4F3A; } /* 副標題顏色更新 */
+#hero p { font-size:28px; color:#5F4F3A; }
 
 .projects {
     display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr));
@@ -76,6 +76,13 @@ section h2, section h3 { margin-bottom:25px; color:#8D995B; letter-spacing:1px; 
 
 .video-container { margin-top:25px; width:90%; max-width:800px; }
 .video-container iframe { width:100%; height:450px; border:none; border-radius:8px; }
+
+/* Email 不變藍 */
+a[href^="mailto:"] {
+    color: #5F4F3A;
+    text-decoration: none;
+}
+a[href^="mailto:"]:hover { text-decoration: underline; }
 </style>
 </head>
 
@@ -101,8 +108,7 @@ section h2, section h3 { margin-bottom:25px; color:#8D995B; letter-spacing:1px; 
   <h2>Work</h2>
 
   <div class="filter-buttons">
-    <button data-filter="all" class="active">All</button>
-    <button data-filter="editing">Editing</button>
+    <button data-filter="editing" class="active">Editing</button>
     <button data-filter="design">Design</button>
     <button data-filter="modeling">3D Modeling</button>
   </div>
@@ -160,8 +166,7 @@ filterButtons.forEach(btn => {
     btn.classList.add('active');
     const filter = btn.getAttribute('data-filter');
     allProjects.forEach(p => {
-      if(filter==='all'){ p.style.display='block'; }
-      else{ p.style.display = p.classList.contains(filter) ? 'block':'none'; }
+      p.style.display = p.classList.contains(filter) ? 'block':'none';
     });
   });
 });
