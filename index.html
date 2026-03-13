@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>曾珮甄作品集</title>
 <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
-
 <style>
 body{
   margin:0;
@@ -94,13 +93,11 @@ nav a{
 .project{
   break-inside:avoid;
   margin-bottom:20px;
-  border:2px solid #8C3A3A;
-  border-radius:6px;
+  border:none;
   overflow:hidden;
   cursor:pointer;
   position:relative;
   transition:0.3s;
-  transform-style:preserve-3d;
 }
 
 .project:hover{
@@ -119,7 +116,7 @@ nav a{
   bottom:0;
   left:0;
   width:100%;
-  background:rgba(0,0,0,0.1);
+  background:rgba(0,0,0,0.4);
   padding:10px;
   opacity:0;
   transition:0.3s;
@@ -130,20 +127,29 @@ nav a{
   opacity:1;
 }
 
-/* project panel */
-#project-panel{
+/* project panel - 居中且背景偏暗 */
+#overlay{
+  display:none;
   position:fixed;
-  top:0;
-  right:-100%;
-  width:50%;
+  top:0; left:0;
+  width:100%;
   height:100%;
+  background:rgba(0,0,0,0.5);
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+#project-panel{
   background:#FFFFFF;
   color:#8C3A3A;
-  padding:40px;
-  box-sizing:border-box;
-  transition:0.5s;
+  padding:30px;
+  max-width:800px;
+  width:90%;
+  max-height:90%;
   overflow:auto;
-  z-index:999;
+  position:relative;
+  border-radius:6px;
 }
 
 #panel-img, #panel-video{
@@ -153,8 +159,8 @@ nav a{
 
 #panel-close{
   position:absolute;
-  top:20px;
-  right:30px;
+  top:10px;
+  right:15px;
   font-size:30px;
   cursor:pointer;
 }
@@ -183,7 +189,11 @@ nav a{
 
 <section id="about">
 <h2>About</h2>
-<p>這裡可以寫你的自我介紹，例如設計理念、擅長的領域、或是你想做的方向。</p>
+<p>
+我是曾珮甄，目前就讀中正大學傳播系三年級，會剪輯、設計及3D建模。<br>
+我想做的，是把我會的技能融合起來，做出有意思、有力量的作品。<br>
+同時，我也保持學習新技術和挑戰不同媒介的熱情。
+</p>
 </section>
 
 <section id="work">
@@ -197,37 +207,37 @@ nav a{
 
 <!-- Design -->
 <div class="projects" id="design">
-<div class="project" data-title="SHIFT" data-description="SHIFT 視覺設計專案，透過幾何構圖與色彩呈現動態轉變。">
+<div class="project" data-title="移面之詞主視覺" data-description="SHIFT 視覺設計專案，透過幾何構圖與色彩呈現動態轉變。">
 <img src="design/shift.jpg">
-<div class="project-title">SHIFT</div>
+<div class="project-title">移面之詞主視覺</div>
 </div>
-<div class="project" data-title="Film Festival" data-description="Film Festival 海報設計。">
+<div class="project" data-title="第17屆瘋影展海報" data-description="Film Festival 海報設計。">
 <img src="design/filmfestival.png">
-<div class="project-title">Film Festival</div>
+<div class="project-title">第17屆瘋影展海報</div>
 </div>
-<div class="project" data-title="Communication Camp" data-description="Communication Camp 視覺設計。">
+<div class="project" data-title="中正傳播營海報" data-description="Communication Camp 視覺設計。">
 <img src="design/communicationcamp.jpg">
-<div class="project-title">Communication Camp</div>
+<div class="project-title">中正傳播營海報</div>
 </div>
-<div class="project" data-title="Voice of Zhongzheng" data-description="Voice of Zhongzheng 視覺專案。">
+<div class="project" data-title="中正之聲2024主視覺" data-description="Voice of Zhongzheng 視覺專案。">
 <img src="design/voiceofzhongzheng.jpg">
-<div class="project-title">Voice of Zhongzheng</div>
+<div class="project-title">中正之聲2024主視覺</div>
 </div>
 </div>
 
 <!-- Editing -->
 <div class="projects" id="editing">
-<div class="project" data-title="Ravine" data-description="影片：ANlh-9-dZR8" data-video="https://www.youtube.com/embed/ANlh-9-dZR8?si=zwyEOQ5nlduVLKED">
+<div class="project" data-title="劇情片｜剪輯" data-description="Ravine" data-video="https://www.youtube.com/embed/ANlh-9-dZR8?si=zwyEOQ5nlduVLKED">
 <img src="editing/ravine.png">
-<div class="project-title">Ravine</div>
+<div class="project-title">劇情片｜剪輯</div>
 </div>
-<div class="project" data-title="Sony" data-description="影片：YSA-ws8PeJo" data-video="https://www.youtube.com/embed/YSA-ws8PeJo">
+<div class="project" data-title="廣告｜導演" data-description="Sony" data-video="https://www.youtube.com/embed/YSA-ws8PeJo">
 <img src="editing/sony.png">
-<div class="project-title">Sony</div>
+<div class="project-title">廣告｜導演</div>
 </div>
-<div class="project" data-title="Wendan" data-description="影片：PeoPo" data-video="https://www.peopo.org/video/822058/embed">
+<div class="project" data-title="新聞｜拍攝、剪輯" data-description="Wendan" data-video="https://www.peopo.org/video/822058/embed">
 <img src="editing/wendan.jpg">
-<div class="project-title">Wendan</div>
+<div class="project-title">新聞｜拍攝、剪輯</div>
 </div>
 </div>
 
@@ -250,19 +260,21 @@ nav a{
 <p>Email: jane940410@gmail.com</p>
 </section>
 
+<!-- overlay panel -->
+<div id="overlay">
 <div id="project-panel">
 <span id="panel-close">✕</span>
-<div id="panel-img-container">
 <img id="panel-img">
 <iframe id="panel-video" width="100%" height="315" frameborder="0" allowfullscreen style="display:none;"></iframe>
-</div>
 <h2 id="panel-title"></h2>
 <p id="panel-text"></p>
 </div>
+</div>
 
 <script>
-// 右側 project panel
+// project panel
 const projects = document.querySelectorAll(".project")
+const overlay = document.getElementById("overlay")
 const panel = document.getElementById("project-panel")
 const panelImg = document.getElementById("panel-img")
 const panelVideo = document.getElementById("panel-video")
@@ -270,8 +282,9 @@ const panelTitle = document.getElementById("panel-title")
 const panelText = document.getElementById("panel-text")
 
 projects.forEach(project=>{
-  project.addEventListener("click",()=>{
-    panel.style.right="0"
+  project.addEventListener("click",(e)=>{
+    e.stopPropagation()
+    overlay.style.display="flex"
     const videoUrl = project.dataset.video
     if(videoUrl){
       panelImg.style.display="none"
@@ -287,36 +300,15 @@ projects.forEach(project=>{
   })
 })
 
-// 點擊叉叉或任意空白處關閉 panel
+// 點擊叉叉或 overlay 任意空白處關閉 panel
 function closePanel(){
-  panel.style.right="-100%"
-  panelVideo.src = "" // 停止影片播放
+  overlay.style.display="none"
+  panelVideo.src=""
 }
 
 document.getElementById("panel-close").onclick=closePanel
-document.addEventListener('click', (e)=>{
-  if(!panel.contains(e.target) && !e.target.classList.contains('project-title') && !e.target.closest('.project')){
-    closePanel()
-  }
-})
-
-// 3D hover
-const cards=document.querySelectorAll(".project")
-cards.forEach(card=>{
-  card.addEventListener("mousemove",(e)=>{
-    const rect=card.getBoundingClientRect()
-    const x=e.clientX-rect.left
-    const y=e.clientY-rect.top
-    const centerX=rect.width/2
-    const centerY=rect.height/2
-    const rotateX=(y-centerY)/10
-    const rotateY=(centerX-x)/10
-    card.style.transform=`rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`
-  })
-  card.addEventListener("mouseleave",()=>{
-    card.style.transform="rotateX(0) rotateY(0) scale(1)"
-  })
-})
+overlay.addEventListener('click',closePanel)
+panel.addEventListener('click',e=>e.stopPropagation())
 
 // 分類按鈕切換
 const buttons = document.querySelectorAll('.category-btns button');
@@ -328,6 +320,5 @@ buttons.forEach(btn=>{
   })
 });
 </script>
-
 </body>
 </html>
