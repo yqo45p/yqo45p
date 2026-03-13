@@ -10,10 +10,10 @@
 <style>
 body {
     margin:0;
-    font-family: 'LXGW Marker Gothic', sans-serif; /* 全站字體 */
+    font-family: 'LXGW Marker Gothic', sans-serif;
     scroll-behavior: smooth;
     background:#D1CF75;
-    color:#5F4F3A; /* 內文顏色 */
+    color:#5F4F3A;
 }
 
 nav {
@@ -24,10 +24,10 @@ nav {
 nav a { color:#fff; margin:0 25px; text-decoration:none; font-weight:bold; letter-spacing:1px; }
 nav a:hover { text-decoration:underline; }
 
-/* 標題和內文統一字體、顏色 */
+/* 標題顏色改回原本 #8D995B */
 #hero h1, section h2, section h3 {
     font-family: 'LXGW Marker Gothic', sans-serif;
-    color:#5F4F3A; /* 與內文相同 */
+    color:#8D995B;
     letter-spacing:1px;
     margin-bottom:25px;
 }
@@ -75,10 +75,9 @@ section.visible { opacity:1; transform: translateY(0); }
 #lightbox img { max-width:90%; max-height:90%; border-radius:8px; }
 #lightbox span { position:absolute; top:30px; right:30px; font-size:40px; color:#fff; cursor:pointer; }
 
-.video-container { margin-top:25px; width:90%; max-width:800px; }
+.video-container { margin-top:25px; width:90%; max-width:800px; display:flex; flex-direction:column; gap:20px; }
 .video-container iframe { width:100%; height:450px; border:none; border-radius:8px; }
 
-/* Email 不變藍 */
 a[href^="mailto:"] {
     color: #5F4F3A;
     text-decoration: none;
@@ -115,17 +114,21 @@ a[href^="mailto:"]:hover { text-decoration: underline; }
   </div>
 
   <div class="projects">
-    <!-- Design 分類圖片 -->
-    <div class="project design"><img src="images/design/shift.jpg" alt="Design Project: Shift"></div>
-    <div class="project design"><img src="images/design/filmfestival.jpg" alt="Design Project: Film Festival"></div>
-    <div class="project design"><img src="images/design/communicationcamp.jpg" alt="Design Project: Communication Camp"></div>
-    <div class="project design"><img src="images/design/voiceofzhongzheng.jpg" alt="Design Project: Voice of Zhongzheng"></div>
-
-    <!-- Editing 與 3D Modeling 可之後補上 -->
+    <!-- Design 圖片 -->
+    <div class="project design"><img src="design/shift.jpg" alt="Design Project: Shift"></div>
+    <div class="project design"><img src="design/filmfestival.png" alt="Design Project: Film Festival"></div>
+    <div class="project design"><img src="design/communicationcamp.jpg" alt="Design Project: Communication Camp"></div>
+    <div class="project design"><img src="design/voiceofzhongzheng.jpg" alt="Design Project: Voice of Zhongzheng"></div>
   </div>
 
+  <!-- 剪輯影片 -->
   <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/YSA-ws8PeJo" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/k5CRxQ0rPTc" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/DDLpt_OMKXY" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/_tzyIj1j39Q" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/D-h27S7wz5s" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/7ZRsVUVbRbg" allowfullscreen></iframe>
   </div>
 </section>
 
@@ -137,25 +140,25 @@ a[href^="mailto:"]:hover { text-decoration: underline; }
 <div id="lightbox"><span id="close">&times;</span><img src="" alt=""></div>
 
 <script>
-// Lightbox 功能
+// Lightbox
 const projects = document.querySelectorAll('.project img');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = lightbox.querySelector('img');
 const closeBtn = document.getElementById('close');
 
 projects.forEach(img => {
-  img.addEventListener('click', () => { 
-    lightbox.style.display = 'flex'; 
-    lightboxImg.src = img.src; 
+  img.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+    lightboxImg.src = img.src;
   });
 });
 closeBtn.addEventListener('click', () => { lightbox.style.display='none'; });
-lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) lightbox.style.display='none'; });
+lightbox.addEventListener('click', e => { if(e.target===lightbox) lightbox.style.display='none'; });
 
-// 滑動淡入動畫
+// 滑動淡入
 const sections = document.querySelectorAll('section');
 const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('visible'); } });
+  entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); } });
 }, { threshold:0.2 });
 sections.forEach(section => observer.observe(section));
 
