@@ -2,6 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
+
 <title>曾珮甄作品集</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC&display=swap" rel="stylesheet">
@@ -18,8 +19,8 @@ scroll-behavior:smooth;
 }
 
 h1,h2{
-color:#8C3A3A;
 margin:0;
+color:#8C3A3A;
 }
 
 h1{font-size:60px;}
@@ -84,32 +85,46 @@ font-size:16px;
 border-radius:4px;
 }
 
-/* masonry */
+/* grid layout */
 
 .projects{
-column-count:3;
-column-gap:20px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 max-width:1100px;
 margin:40px auto;
 }
 
 @media (max-width:800px){
-.projects{column-count:2;}
+.projects{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+/* staggered layout */
+
+.project:nth-child(3n){
+grid-row:span 2;
+}
+
+.project:nth-child(5n){
+grid-row:span 2;
 }
 
 .project{
-break-inside:avoid;
-margin-bottom:20px;
 cursor:pointer;
 position:relative;
+overflow:hidden;
 }
 
 .project img{
 width:100%;
+height:100%;
+object-fit:cover;
 display:block;
 }
 
-/* hover text */
+/* hover title */
 
 .project-title{
 position:absolute;
@@ -146,7 +161,6 @@ z-index:999;
 
 #project-panel{
 background:#FFFFFF;
-color:#8C3A3A;
 padding:30px;
 max-width:800px;
 width:90%;
@@ -161,20 +175,19 @@ flex-direction:column;
 align-items:center;
 }
 
-/* image */
+/* image & video */
 
-#panel-img{
-max-width:60%;
+#panel-img,
+#panel-video{
+display:block;
+margin:auto;
+max-width:70%;
 height:auto;
 margin-bottom:20px;
 }
 
-/* video */
-
 #panel-video{
-width:70%;
-height:380px;
-margin-bottom:20px;
+aspect-ratio:16/9;
 border:none;
 }
 
@@ -192,7 +205,6 @@ cursor:pointer;
 
 #connect{
 padding:60px 20px;
-text-align:center;
 }
 
 </style>
@@ -226,30 +238,22 @@ text-align:center;
 
 <div class="projects" id="design">
 
-<div class="project"
-data-title="移面之詞主視覺"
-data-description="SHIFT 視覺設計專案">
+<div class="project" data-title="移面之詞主視覺" data-description="SHIFT 視覺設計專案">
 <img src="design/shift.jpg">
 <div class="project-title">移面之詞主視覺</div>
 </div>
 
-<div class="project"
-data-title="第17屆瘋影展海報"
-data-description="Film Festival 海報設計">
+<div class="project" data-title="第17屆瘋影展海報" data-description="Film Festival 海報設計">
 <img src="design/filmfestival.png">
 <div class="project-title">第17屆瘋影展海報</div>
 </div>
 
-<div class="project"
-data-title="中正傳播營海報"
-data-description="Communication Camp 視覺設計">
+<div class="project" data-title="中正傳播營海報" data-description="Communication Camp 視覺設計">
 <img src="design/communicationcamp.jpg">
 <div class="project-title">中正傳播營海報</div>
 </div>
 
-<div class="project"
-data-title="中正之聲2024主視覺"
-data-description="Voice of Zhongzheng 視覺專案">
+<div class="project" data-title="中正之聲2024主視覺" data-description="Voice of Zhongzheng 視覺專案">
 <img src="design/voiceofzhongzheng.jpg">
 <div class="project-title">中正之聲2024主視覺</div>
 </div>
@@ -261,58 +265,37 @@ data-description="Voice of Zhongzheng 視覺專案">
 
 <div class="projects" id="video">
 
-<div class="project"
-data-title="劇情片｜剪輯"
-data-description="Ravine、場記"
-data-video="https://www.youtube.com/embed/ANlh-9-dZR8?autoplay=1">
+<div class="project" data-title="劇情片｜剪輯" data-description="Ravine、場記" data-video="https://www.youtube.com/embed/ANlh-9-dZR8?autoplay=1">
 <img src="video/ravine.png">
 <div class="project-title">劇情片｜剪輯</div>
 </div>
 
-<div class="project"
-data-title="廣告｜導演"
-data-description="Sony"
-data-video="https://www.youtube.com/embed/YSA-ws8PeJo?autoplay=1">
+<div class="project" data-title="廣告｜導演" data-description="Sony" data-video="https://www.youtube.com/embed/YSA-ws8PeJo?autoplay=1">
 <img src="video/sony.png">
 <div class="project-title">廣告｜導演</div>
 </div>
 
-<div class="project"
-data-title="新聞｜拍攝、剪輯"
-data-description="Wendan"
-data-video="https://www.peopo.org/video/822058/embed">
+<div class="project" data-title="新聞｜拍攝、剪輯" data-description="Wendan" data-video="https://www.peopo.org/video/822058/embed">
 <img src="video/wendan.jpg">
 <div class="project-title">新聞｜拍攝、剪輯</div>
 </div>
 
-<div class="project"
-data-title="劇情片｜攝影助理"
-data-description="Narrow House"
-data-video="https://www.youtube.com/embed/ODA4hvMLTbk?autoplay=1">
+<div class="project" data-title="劇情片｜攝影助理" data-description="Narrow House" data-video="https://www.youtube.com/embed/ODA4hvMLTbk?autoplay=1">
 <img src="video/narrowhouse.png">
 <div class="project-title">劇情片｜攝影助理</div>
 </div>
 
-<div class="project"
-data-title="新聞｜攝影、剪輯"
-data-description="Hurt"
-data-video="https://www.youtube.com/embed/DDLpt_OMKXY?autoplay=1">
+<div class="project" data-title="新聞｜攝影、剪輯" data-description="Hurt" data-video="https://www.youtube.com/embed/DDLpt_OMKXY?autoplay=1">
 <img src="video/hurt.jpg">
 <div class="project-title">新聞｜攝影、剪輯</div>
 </div>
 
-<div class="project"
-data-title="新聞｜攝影、剪輯"
-data-description="Crime"
-data-video="https://www.youtube.com/embed/_tzyIj1j39Q?autoplay=1">
+<div class="project" data-title="新聞｜攝影、剪輯" data-description="Crime" data-video="https://www.youtube.com/embed/_tzyIj1j39Q?autoplay=1">
 <img src="video/crime.jpg">
 <div class="project-title">新聞｜攝影、剪輯</div>
 </div>
 
-<div class="project"
-data-title="新聞｜攝影、剪輯"
-data-description="AIDS"
-data-video="https://www.youtube.com/embed/D-h27S7wz5s?autoplay=1">
+<div class="project" data-title="新聞｜攝影、剪輯" data-description="AIDS" data-video="https://www.youtube.com/embed/D-h27S7wz5s?autoplay=1">
 <img src="video/aids.jpg">
 <div class="project-title">新聞｜攝影、剪輯</div>
 </div>
@@ -324,9 +307,7 @@ data-video="https://www.youtube.com/embed/D-h27S7wz5s?autoplay=1">
 
 <div class="projects" id="3d">
 
-<div class="project"
-data-title="3D Project"
-data-description="3D建模作品">
+<div class="project" data-title="3D Project" data-description="3D建模作品">
 <img src="3d/model1.jpg">
 <div class="project-title">3D Project</div>
 </div>
@@ -341,8 +322,8 @@ data-description="3D建模作品">
 <h2>About</h2>
 
 <p>
-我是曾珮甄，目前就讀中正大學傳播系三年級，會剪輯、設計及3D建模。  
-我想做的，是把我會的技能融合起來，做出有意思、有力量的作品。  
+我是曾珮甄，目前就讀中正大學傳播系三年級，會剪輯、設計及3D建模。
+我想做的，是把我會的技能融合起來，做出有意思、有力量的作品。
 同時，我也保持學習新技術和挑戰不同媒介的熱情。
 </p>
 
@@ -350,8 +331,11 @@ data-description="3D建模作品">
 
 
 <section id="connect">
+
 <h2>Connect</h2>
+
 <p>Email: jane940410@gmail.com</p>
+
 </section>
 
 
@@ -385,7 +369,7 @@ const panelText=document.getElementById("panel-text")
 
 projects.forEach(project=>{
 
-project.onclick=(e)=>{
+project.onclick=()=>{
 
 overlay.style.display="flex"
 
@@ -432,7 +416,7 @@ buttons.forEach(btn=>{
 btn.onclick=()=>{
 const cat=btn.dataset.cat
 document.querySelectorAll(".projects").forEach(p=>{
-p.style.display=(p.id===cat)?"block":"none"
+p.style.display=(p.id===cat)?"grid":"none"
 })
 }
 })
