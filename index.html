@@ -26,7 +26,12 @@ h1,h2{
     color:#5b25c7;
 }
 
-h1{font-size:60px;}
+h1{
+    font-size:60px;
+    font-weight:normal; /* 不加粗 */
+    line-height:1.2;
+}
+
 h2{font-size:36px;}
 
 section{
@@ -115,11 +120,11 @@ nav a{
 
 .project img{
     width:100%;
-    height:auto;
+    height:auto; /* 保留原比例 */
     display:block;
 }
 
-/* hover title */
+/* overlay title */
 .project-title{
     position:absolute;
     bottom:0;
@@ -127,13 +132,9 @@ nav a{
     width:100%;
     background:rgba(0,0,0,0.4);
     padding:10px;
-    opacity:0;
-    transition:0.3s;
     color:#FFFFFF;
-}
-
-.project:hover .project-title{
-    opacity:1;
+    font-weight:normal;
+    text-align:center;
 }
 
 /* overlay */
@@ -166,7 +167,6 @@ nav a{
     align-items:center;
 }
 
-/* image & video */
 #panel-img,
 #panel-video{
     display:block;
@@ -204,7 +204,7 @@ nav a{
 
 <section id="hero">
 <h1>曾珮甄作品集</h1>
-<p>Design / Video / 3D Modeling</p>
+<p>Design / Video / 3D</p>
 </section>
 
 <section id="work">
@@ -213,7 +213,7 @@ nav a{
 <div class="category-btns">
 <button data-cat="video">Video</button>
 <button data-cat="design">Design</button>
-<button data-cat="3d">3D Modeling</button>
+<button data-cat="3d">3D</button>
 </div>
 
 <!-- VIDEO -->
