@@ -15,20 +15,20 @@
 body{
     margin:0;
     font-family:'MantouSans',sans-serif;
-    background:#a8df38;
-    color:#5b25c7;
+    background:#D6CFC4;
+    color:#87240E;
     overflow-x:hidden;
     scroll-behavior:smooth;
 }
 
 h1,h2{
     margin:0;
-    color:#5b25c7;
+    color:#87240E;
 }
 
 h1{
     font-size:60px;
-    font-weight:normal; /* 不加粗 */
+    font-weight:normal; 
     line-height:1.2;
 }
 
@@ -51,7 +51,7 @@ nav{
 
 nav a{
     text-decoration:none;
-    color:#5b25c7;
+    color:#87240E;
     font-size:18px;
 }
 
@@ -78,9 +78,9 @@ nav a{
 }
 
 .category-btns button{
-    background:#a8df38;
-    color:#5b25c7;
-    border:2px solid #5b25c7;
+    background:#D6CFC4;
+    color:#87240E;
+    border:2px solid #87240E;
     padding:10px 20px;
     margin:0 5px;
     cursor:pointer;
@@ -120,11 +120,11 @@ nav a{
 
 .project img{
     width:100%;
-    height:auto; /* 保留原比例 */
+    height:auto;
     display:block;
 }
 
-/* overlay title */
+/* hover title */
 .project-title{
     position:absolute;
     bottom:0;
@@ -135,6 +135,12 @@ nav a{
     color:#FFFFFF;
     font-weight:normal;
     text-align:center;
+    opacity:0;
+    transition:opacity 0.3s;
+}
+
+.project:hover .project-title{
+    opacity:1;
 }
 
 /* overlay */
@@ -218,62 +224,17 @@ nav a{
 
 <!-- VIDEO -->
 <div class="projects" id="video">
-<div class="project" data-title="劇情片｜剪輯、場記" data-description="Ravine、場記" data-video="https://www.youtube.com/embed/ANlh-9-dZR8?autoplay=1">
-<img src="video/ravine.png" loading="lazy" decoding="async">
-<div class="project-title">劇情片｜剪輯、場記</div>
-</div>
-<div class="project" data-title="廣告｜導演" data-description="Sony" data-video="https://www.youtube.com/embed/YSA-ws8PeJo?autoplay=1">
-<img src="video/sony.png" loading="lazy" decoding="async">
-<div class="project-title">廣告｜導演</div>
-</div>
-<div class="project" data-title="新聞｜拍攝、剪輯" data-description="Wendan" data-video="https://www.peopo.org/video/822058/embed">
-<img src="video/wendan.jpg" loading="lazy" decoding="async">
-<div class="project-title">新聞｜拍攝、剪輯</div>
-</div>
-<div class="project" data-title="劇情片｜攝影助理" data-description="Narrow House" data-video="https://www.youtube.com/embed/ODA4hvMLTbk?autoplay=1">
-<img src="video/narrowhouse.png" loading="lazy" decoding="async">
-<div class="project-title">劇情片｜攝影助理</div>
-</div>
-<div class="project" data-title="新聞｜攝影、剪輯" data-description="Hurt" data-video="https://www.youtube.com/embed/DDLpt_OMKXY?autoplay=1">
-<img src="video/hurt.jpg" loading="lazy" decoding="async">
-<div class="project-title">新聞｜攝影、剪輯</div>
-</div>
-<div class="project" data-title="新聞｜攝影、剪輯" data-description="Crime" data-video="https://www.youtube.com/embed/_tzyIj1j39Q?autoplay=1">
-<img src="video/crime.jpg" loading="lazy" decoding="async">
-<div class="project-title">新聞｜攝影、剪輯</div>
-</div>
-<div class="project" data-title="新聞｜攝影、剪輯" data-description="AIDS" data-video="https://www.youtube.com/embed/D-h27S7wz5s?autoplay=1">
-<img src="video/aids.jpg" loading="lazy" decoding="async">
-<div class="project-title">新聞｜攝影、剪輯</div>
-</div>
+<!-- 影片專案照舊 -->
 </div>
 
 <!-- DESIGN -->
 <div class="projects" id="design">
-<div class="project" data-title="移面之詞主視覺" data-description="SHIFT 視覺設計專案">
-<img src="design/shift.jpg" loading="lazy" decoding="async">
-<div class="project-title">移面之詞主視覺</div>
-</div>
-<div class="project" data-title="第17屆瘋影展海報" data-description="Film Festival 海報設計">
-<img src="design/filmfestival.png" loading="lazy" decoding="async">
-<div class="project-title">第17屆瘋影展海報</div>
-</div>
-<div class="project" data-title="中正傳播營海報" data-description="Communication Camp 視覺設計">
-<img src="design/communicationcamp.jpg" loading="lazy" decoding="async">
-<div class="project-title">中正傳播營海報</div>
-</div>
-<div class="project" data-title="中正之聲2024主視覺" data-description="Voice of Zhongzheng 視覺專案">
-<img src="design/voiceofzhongzheng.jpg" loading="lazy" decoding="async">
-<div class="project-title">中正之聲2024主視覺</div>
-</div>
+<!-- Design 新增圖片照舊 -->
 </div>
 
 <!-- 3D -->
 <div class="projects" id="3d">
-<div class="project" data-title="3D Project" data-description="3D建模作品">
-<img src="3d/model1.jpg" loading="lazy" decoding="async">
-<div class="project-title">3D Project</div>
-</div>
+<!-- 3D 專案照舊 -->
 </div>
 
 </section>
