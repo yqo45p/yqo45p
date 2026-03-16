@@ -5,7 +5,6 @@
 <title>曾珮甄作品集</title>
 
 <style>
-
 @font-face{
     font-family:'MantouSans';
     src:url('MantouSans-Regular.ttf') format('truetype');
@@ -20,62 +19,22 @@ body{
     scroll-behavior:smooth;
 }
 
-h1{
-    font-size:60px;
-    font-weight: normal;
-    color:#87240E;
-    margin:0;
-}
-
-h2{
-    font-size:36px;
-    color:#87240E;
-    margin:0;
-}
-
-section{
-    padding:120px 20px;
-    text-align:center;
-}
+h1{ font-size:60px; font-weight: normal; color:#87240E; margin:0; }
+h2{ font-size:36px; color:#87240E; margin:0; }
+section{ padding:120px 20px; text-align:center; }
 
 /* navbar */
-nav{
-    position:fixed;
-    top:20px;
-    right:20px;
-    display:flex;
-    gap:20px;
-    z-index:10;
-}
-
-nav a{
-    text-decoration:none;
-    color:#87240E;
-    font-size:18px;
-}
+nav{ position:fixed; top:20px; right:20px; display:flex; gap:20px; z-index:10; }
+nav a{ text-decoration:none; color:#87240E; font-size:18px; }
 
 /* hero */
-#hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
+#hero{ height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; }
 
 /* about */
-#about p{
-    font-size:20px;
-    line-height:1.7;
-    max-width:700px;
-    margin:auto;
-}
+#about p{ font-size:20px; line-height:1.7; max-width:700px; margin:auto; }
 
 /* category */
-.category-btns{
-    margin:30px 0;
-}
-
+.category-btns{ margin:30px 0; }
 .category-btns button{
     background:#D6CFC4;
     color:#87240E;
@@ -96,9 +55,7 @@ nav a{
     margin:40px auto;
 }
 
-@media (max-width:800px){
-    .projects{column-count:2;}
-}
+@media (max-width:800px){ .projects{ column-count:2; } }
 
 .project{
     break-inside:avoid;
@@ -107,10 +64,7 @@ nav a{
     position:relative;
 }
 
-.project img{
-    width:100%;
-    display:block;
-}
+.project img{ width:100%; display:block; }
 
 /* hover text */
 .project-title{
@@ -125,18 +79,14 @@ nav a{
     color:#FFFFFF;
 }
 
-.project:hover .project-title{
-    opacity:1;
-}
+.project:hover .project-title{ opacity:1; }
 
 /* overlay */
 #overlay{
     display:none;
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    top:0; left:0;
+    width:100%; height:100%;
     background:rgba(0,0,0,0.55);
     justify-content:center;
     align-items:center;
@@ -155,41 +105,18 @@ nav a{
     border-radius:6px;
     text-align:center;
     position:relative;
-
     display:flex;
     flex-direction:column;
     align-items:center;
 }
 
-/* image */
-#panel-img{
-    max-width:60%;
-    height:auto;
-    margin-bottom:20px;
-}
+#panel-img{ max-width:60%; height:auto; margin-bottom:20px; }
+#panel-video{ width:70%; height:380px; margin-bottom:20px; border:none; }
+#panel-extra-images{ display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
 
-/* video */
-#panel-video{
-    width:70%;
-    height:380px;
-    margin-bottom:20px;
-    border:none;
-}
+#panel-close{ position:absolute; top:10px; right:15px; font-size:28px; cursor:pointer; }
 
-/* close */
-#panel-close{
-    position:absolute;
-    top:10px;
-    right:15px;
-    font-size:28px;
-    cursor:pointer;
-}
-
-/* connect */
-#connect{
-    padding:60px 20px;
-    text-align:center;
-}
+#connect{ padding:60px 20px; text-align:center; }
 
 </style>
 </head>
@@ -218,39 +145,104 @@ nav a{
 
 <!-- DESIGN -->
 <div class="projects" id="design">
-<!-- 你的設計作品保持不變 -->
+  <div class="project" data-title="移面之詞主視覺" data-description="SHIFT 視覺設計專案">
+    <img src="design/shift.jpg">
+    <div class="project-title">移面之詞主視覺</div>
+  </div>
+  <div class="project" data-title="第17屆瘋影展海報" data-description="Film Festival 海報設計">
+    <img src="design/filmfestival.png">
+    <div class="project-title">第17屆瘋影展海報</div>
+  </div>
+  <div class="project" data-title="中正傳播營海報" data-description="Communication Camp 視覺設計">
+    <img src="design/communicationcamp.jpg">
+    <div class="project-title">中正傳播營海報</div>
+  </div>
+  <div class="project" data-title="中正之聲2024主視覺" data-description="Voice of Zhongzheng 視覺專案">
+    <img src="design/voiceofzhongzheng.jpg">
+    <div class="project-title">中正之聲2024主視覺</div>
+  </div>
+  <div class="project" data-title="eye" data-description="eye 圖片展示">
+    <img src="design/eye.png">
+    <div class="project-title">eye</div>
+  </div>
+  <div class="project" data-title="fb" data-description="fb 圖片展示">
+    <img src="design/fb.png">
+    <div class="project-title">fb</div>
+  </div>
+  <div class="project" data-title="ghost" data-description="ghost 圖片展示">
+    <img src="design/ghost.jpg">
+    <div class="project-title">ghost</div>
+  </div>
+  <div class="project" data-title="introduce" data-description="introduce 圖片展示">
+    <img src="design/introduce.png">
+    <div class="project-title">introduce</div>
+  </div>
+  <div class="project" data-title="news" data-description="news 圖片展示">
+    <img src="design/news.png">
+    <div class="project-title">news</div>
+  </div>
+  <div class="project" data-title="one" data-description="one 圖片展示">
+    <img src="design/one.png">
+    <div class="project-title">one</div>
+  </div>
+  <div class="project" data-title="temperature" data-description="temperature 圖片展示">
+    <img src="design/temperature.png">
+    <div class="project-title">temperature</div>
+  </div>
 </div>
 
 <!-- VIDEO -->
 <div class="projects" id="video">
-<!-- 你的影片作品保持不變 -->
+  <div class="project" data-title="AIDS" data-description="AIDS 影片" data-video="https://www.youtube.com/embed/D-h27S7wz5s?autoplay=1">
+    <img src="video/aids.jpg">
+    <div class="project-title">AIDS</div>
+  </div>
+  <div class="project" data-title="Crime" data-description="Crime 影片" data-video="https://www.youtube.com/embed/_tzyIj1j39Q?autoplay=1">
+    <img src="video/crime.jpg">
+    <div class="project-title">Crime</div>
+  </div>
+  <div class="project" data-title="Hurt" data-description="Hurt 影片" data-video="https://www.youtube.com/embed/DDLpt_OMKXY?autoplay=1">
+    <img src="video/hurt.jpg">
+    <div class="project-title">Hurt</div>
+  </div>
+  <div class="project" data-title="Narrow House" data-description="Narrow House 影片" data-video="https://www.youtube.com/embed/ODA4hvMLTbk?autoplay=1">
+    <img src="video/narrowhouse.png">
+    <div class="project-title">Narrow House</div>
+  </div>
+  <div class="project" data-title="Ravine" data-description="Ravine 影片" data-video="https://www.youtube.com/embed/ANlh-9-dZR8?autoplay=1">
+    <img src="video/ravine.png">
+    <div class="project-title">Ravine</div>
+  </div>
+  <div class="project" data-title="Sony" data-description="Sony 影片" data-video="https://www.youtube.com/embed/YSA-ws8PeJo?autoplay=1">
+    <img src="video/sony.png">
+    <div class="project-title">Sony</div>
+  </div>
+  <div class="project" data-title="Wendan" data-description="Wendan 影片" data-video="https://www.youtube.com/embed/7ZRsVUVbRbg?autoplay=1">
+    <img src="video/wendan.jpg">
+    <div class="project-title">Wendan</div>
+  </div>
 </div>
 
 <!-- 3D -->
 <div class="projects" id="3d">
-
   <div class="project"
-    data-title="Shixian 3D"
-    data-description="這是 Shixian 3D 系列展示"
-    data-images="d/shixian/shixian2.jpg,d/shixian/shixian3.jpg,d/shixian/shixian4.png,d/shixian/shixian5.png">
+       data-title="Shixian 3D"
+       data-description="這是 Shixian 3D 系列展示"
+       data-images="d/shixian/shixian2.jpg,d/shixian/shixian3.jpg,d/shixian/shixian4.png,d/shixian/shixian5.png">
     <img src="d/shixian/shixian1.jpg">
     <div class="project-title">Shixian 3D</div>
   </div>
-
 </div>
 
 </section>
 
 <section id="about">
-
 <h2>About</h2>
-
 <p>
 我是曾珮甄，目前就讀中正大學傳播系三年級，會剪輯、設計及3D建模。  
 我想做的，是把我會的技能融合起來，做出有意思、有力量的作品。  
 同時，我也保持學習新技術和挑戰不同媒介的熱情。
 </p>
-
 </section>
 
 <section id="connect">
@@ -259,35 +251,24 @@ nav a{
 </section>
 
 <div id="overlay">
-
-<div id="project-panel">
-
-<span id="panel-close">✕</span>
-
-<img id="panel-img">
-
-<iframe id="panel-video" allow="autoplay; fullscreen"></iframe>
-
-<h2 id="panel-title"></h2>
-
-<p id="panel-text"></p>
-
-<!-- 新增說明圖片容器 -->
-<div id="panel-extra-images" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;"></div>
-
-</div>
-
+  <div id="project-panel">
+    <span id="panel-close">✕</span>
+    <img id="panel-img">
+    <iframe id="panel-video" allow="autoplay; fullscreen"></iframe>
+    <h2 id="panel-title"></h2>
+    <p id="panel-text"></p>
+    <div id="panel-extra-images"></div>
+  </div>
 </div>
 
 <script>
-
 const projects=document.querySelectorAll(".project")
 const overlay=document.getElementById("overlay")
 const panelImg=document.getElementById("panel-img")
 const panelVideo=document.getElementById("panel-video")
 const panelTitle=document.getElementById("panel-title")
 const panelText=document.getElementById("panel-text")
-const panelExtraImages = document.getElementById("panel-extra-images")
+const panelExtraImages=document.getElementById("panel-extra-images")
 
 projects.forEach(project=>{
   project.onclick=()=>{
@@ -297,7 +278,6 @@ projects.forEach(project=>{
     panelTitle.textContent=project.dataset.title
     panelText.textContent=project.dataset.description
 
-    // 先清空面板
     panelExtraImages.innerHTML=""
 
     if(video){
@@ -310,7 +290,6 @@ projects.forEach(project=>{
       panelImg.src=project.querySelector("img").src
     }
 
-    // 處理附加圖片
     if(images){
       const imgs=images.split(",")
       imgs.forEach(src=>{
@@ -339,7 +318,6 @@ document.getElementById("project-panel").onclick=(e)=>{
 }
 
 const buttons=document.querySelectorAll(".category-btns button")
-// 一開始全部作品混合顯示
 document.querySelectorAll(".projects").forEach(p=>p.style.display="block");
 
 buttons.forEach(btn=>{
@@ -350,7 +328,6 @@ buttons.forEach(btn=>{
     })
   }
 })
-
 </script>
 
 </body>
