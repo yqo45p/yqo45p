@@ -19,28 +19,19 @@ body{
     scroll-behavior:smooth;
 }
 
-h1{ font-weight: normal; color:#87240E; margin:0; }
+h1{ font-size:60px; font-weight: normal; color:#87240E; margin:0; }
 h2{ font-size:36px; color:#87240E; margin:0; }
 section{ padding:120px 20px; text-align:center; }
-
-/* Hero 名字動畫 */
-#name{
-  font-size:80px;
-  letter-spacing:20px;
-  line-height:1.4;
-  white-space:pre-line;
-}
-
-#subtitle{
-  margin-top:20px;
-  opacity:0;
-  transition:1s;
-  font-size:24px;
-}
 
 /* navbar */
 nav{ position:fixed; top:20px; right:20px; display:flex; gap:20px; z-index:10; }
 nav a{ text-decoration:none; color:#87240E; font-size:18px; }
+
+/* hero */
+#hero{ height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; }
+
+/* about */
+#about p{ font-size:20px; line-height:1.7; max-width:700px; margin:auto; }
 
 /* category */
 .category-btns{ margin:30px 0; }
@@ -136,8 +127,8 @@ nav a{ text-decoration:none; color:#87240E; font-size:18px; }
 </nav>
 
 <section id="hero">
-  <h1 id="name"></h1>
-  <p id="subtitle">Design / Video / 3D</p>
+  <h1>曾珮甄作品集</h1>
+  <p>Design / Video / 3D</p>
 </section>
 
 <section id="work">
@@ -274,21 +265,6 @@ nav a{ text-decoration:none; color:#87240E; font-size:18px; }
 </div>
 
 <script>
-// 首頁名字動畫
-const text = "Z E N G\nP E I\nZ H E N";
-let i = 0;
-const speed = 120;
-function typeWriter(){
-  if(i < text.length){
-    document.getElementById("name").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typeWriter,speed);
-  } else {
-    document.getElementById("subtitle").style.opacity = 1;
-  }
-}
-typeWriter();
-
 // Project 面板
 const projects=document.querySelectorAll(".project")
 const overlay=document.getElementById("overlay")
